@@ -569,7 +569,7 @@ void canDashboardHaltech(CanCycle cycle) {
 
 		/* todo: 0x3E5 = 50Hz rate */
 		{
-			CanTxMessage msg(CanCategory::NBC, 0x3E5, 8);
+			CanTxMessage msg(CanCategory::NBC, 0x001, 8);
 			msg[0] = 0x00;
 			msg[1] = 0x00;
 			msg[2] = 0x00;
@@ -693,7 +693,7 @@ void canDashboardHaltech(CanCycle cycle) {
 
 		/* 0x36B - 20Hz rate */
 		{
-			CanTxMessage msg(CanCategory::NBC, 0x36B, 8);
+			CanTxMessage msg(CanCategory::NBC, 0x002, 8);
 			/* Break Pressure */
 			msg[0] = 0x00;
 			msg[1] = 0x00;
@@ -710,7 +710,7 @@ void canDashboardHaltech(CanCycle cycle) {
 
 		/* 0x36C = 20Hz rate */
 		{
-			CanTxMessage msg(CanCategory::NBC, 0x36C, 8);
+			CanTxMessage msg(CanCategory::NBC, 0x003, 8);
 			/* Wheel Speed Front Left */
 			auto vehicleSpeed10 = Sensor::getOrZero(SensorType::VehicleSpeed) * 10;
 			msg.setShortValueMsb(vehicleSpeed10, 0);
@@ -740,7 +740,7 @@ void canDashboardHaltech(CanCycle cycle) {
 
 		/* 0x36E = 20Hz rate */
 		{
-			CanTxMessage msg(CanCategory::NBC, 0x36E, 8);
+			CanTxMessage msg(CanCategory::NBC, 0x004, 8);
 			/* Engine Limiting Active 0 = off/1=on*/
 			msg[0] = 0x00;
 			msg[1] = 0x00;
@@ -768,7 +768,7 @@ void canDashboardHaltech(CanCycle cycle) {
 
 		/* 0x370 = 20Hz rate */
 		{
-			CanTxMessage msg(CanCategory::NBC, 0x370, 8);
+			CanTxMessage msg(CanCategory::NBC, 0x005, 8);
 			/* Vehicle Speed */
 			auto vehicleSpeed10 = Sensor::getOrZero(SensorType::VehicleSpeed);
 			msg.setShortValueMsb(vehicleSpeed10, 0);
@@ -970,7 +970,7 @@ void canDashboardHaltech(CanCycle cycle) {
 
 		/* 0x376 = 10Hz rate */
 		{
-			CanTxMessage msg(CanCategory::NBC, 0x376, 8);
+			CanTxMessage msg(CanCategory::NBC, 0x006, 8);
 			/* Ambient Air Temperature */
 			msg[0] = 0x00;
 			msg[1] = 0x00;
@@ -1042,7 +1042,7 @@ void canDashboardHaltech(CanCycle cycle) {
 
 		/* todo: 0x3E4 = 5Hz rate */
 		{
-    			CanTxMessage msg(CanCategory::NBC, 0x3E4, 8);
+    			CanTxMessage msg(CanCategory::NBC, 0x007, 8);
     			msg[0] = 0x00; //unused
     			if (engine->engineState.brakePedalState) {
     				msg.setBit(1, 2); // Brake active
