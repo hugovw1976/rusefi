@@ -1042,7 +1042,7 @@ void canDashboardHaltech(CanCycle cycle) {
 
 		/* todo: 0x3E4 = 5Hz rate */
 		{
-    			CanTxMessage msg(CanCategory::NBC, 0x007, 8);
+    			CanTxMessage msg(CanCategory::NBC, 0x3E4, 8);
     			msg[0] = 0x00; //unused
     			if (engine->engineState.brakePedalState) {
     				msg.setBit(1, 2); // Brake active
